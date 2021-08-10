@@ -5,20 +5,20 @@ const createNavBar = () => {
   let domString = `
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Overview</a>
+    <a class="navbar-brand" href="index.html">Overview</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Repositories</a>
+          <a class="nav-link active" href="repositories.html">Repositories</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Projects</a>
+          <a class="nav-link" href="projects.html">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Packages</a>
+          <a class="nav-link" href="packages.html">Packages</a>
         </li>
       </ul>
     </div>
@@ -66,7 +66,7 @@ const createFooter = () => {
     <a class="nav-link" href="#">Link</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    <a class="nav-link" href="#">Link</a>
   </li>
 </ul>
   `;
