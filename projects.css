@@ -1,0 +1,4 @@
+.blocksContainer {
+  display: flex;
+  flex-direction: column;
+}
