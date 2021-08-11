@@ -1,16 +1,45 @@
 import { renderToDom } from "./renderToDom.js";
 import { createNavBar, createProfile, createFooter } from "./sharedLayout.js"
 
-export const createRepo = [
+export const repoArray = [
 {
-  name: "pies",
+  name: "Pies",
   description: "the big pie",
-}
+},
+{
+  name: "Repo2",
+  description: "my 2nd repo",
+},
+{
+  name: "Pet Adoptions",
+  description: "Created for Project",
+},
+{
+  name: "Cards Repo",
+  description: "Repo for testing cards",
+},
+{
+  name: "Sorting Hats",
+  description: "Sorting hats project",
+},
 ];
+
+const createRepoContainer = (array) => {
+  let domString = "";
+  array.forEach((repo) => {
+  domString += `
+  <div class="container">
+          <h5 class="card-title">${repo.name}</h5>
+          <p class="card-text">${repo.description}</p>
+        </div>
+  `
+  })
+  renderToDom("#container1" ,domString);
+};
 
 const createRepoForm = () => {
     let domString = `
-    <form>
+  <form id="createRepo">
     <div class="mb-3">
         <label for="repoInput1" class="repo-label">Repository Name</label>
         <input type="text" class="form-control" id="repoInput1" aria-describedby="repoHelp">
@@ -20,35 +49,28 @@ const createRepoForm = () => {
         <label for="inputDescription1" class="form-label">Description</label>
         <input type="text" class="form-control" id="inputDescription1">
     </div>
-    <button type="button" id="formButton" class="btn btn-primary">Create Repository</button>
-</form>
+    <button type="submit" id="formButton" class="btn btn-primary">Create Repository</button>
+  </form>
     `
     renderToDom("#container2" ,domString);
 };
 
-const createRepoContainer = () => {
-  let domString = `
-  
-  `
-  renderToDom("#container1" ,domString);
+const handleFormSubmit = (event) => {
+  event.preventDefault();
+  const newRepo = {
+    name: document.querySelector("#repoInput1").value,
+    description: document.querySelector("#inputDescription1").value,
+  };
+  repoArray.push(newRepo);
+  createRepoContainer(repoArray);
+};
 
+const repoClickEvents = () => {
+  document
+  .querySelector("#createRepo")
+  .addEventListener("submit", handleFormSubmit)
 }
-const repoBuilder = (array) => {
-    let domString = "";
-    array.forEach((object, i) => {
-        domString += `
-        <div class="card" style="width: 20rem;">
-          <div class="card-body">
-            <h5 class="card-title">${object.name}</h5>
-            <p class="card-text">${object.house}</p>
-              
-              <button type="button" id=${i} id="expelButton" class="btn btn-primary">Expel</button>
-          </div>
-        </div>
-        `
-      renderToDom("#studentCard", domString);
-      const expel = document.querySelector("#expelButton");
-      expel.addEventListener("click", expelStudent);
-}
-)};
-export { createRepoForm, createRepoContainer }
+
+
+
+export { createRepoForm, createRepoContainer, repoClickEvents }

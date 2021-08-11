@@ -1,5 +1,5 @@
 import { createNavBar, createProfile, createFooter } from "./sharedLayout.js";
-import { createRepoForm, createRepoContainer, createRepo } from "./repositories.js";
+import { createRepoForm, createRepoContainer, repoArray, repoClickEvents } from "./repositories.js";
 import { createProjectBoxOne, createProjectBoxTwo, projArray, clickEvents } from "./projects.js";
 
 const init = () => {
@@ -9,8 +9,9 @@ const init = () => {
   createFooter();
   
   if (window.location.pathname.includes("repositories")) {
+    createRepoContainer(repoArray);
     createRepoForm();
-    createRepoContainer(createRepo);
+    repoClickEvents();
   }
   if (window.location.pathname.includes("projects")) {
     createProjectBoxOne(projArray);
