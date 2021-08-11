@@ -33,19 +33,18 @@ const createNavBar = () => {
 const createProfile = () => {
   let domString = `
   <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="https://ummokblog.files.wordpress.com/2017/06/mb1.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">Comicus, The Standup Philosopher (C0micus_HotWpt1)</h5>
+    <p class="card-text">I am a standup philosopher, who also dabbles in code in my free time!</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
+    <li class="list-group-item">Rome, Italy</li>
+    <li class="list-group-item">github@C0micus_HotWpt1</li>
   </ul>
   <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <a href="https://www.youtube.com/watch?v=I9QBaKixc5I" class="card-link">Dayjob</a>
+    <a href="https://github.com/nss-evening-cohort-16/gitsub-purple-parrots" class="card-link">GitHub</a>
   </div>
 </div>
   `;
