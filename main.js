@@ -1,5 +1,5 @@
 import { createNavBar, createProfile, createFooter } from "./sharedLayout.js";
-import { createPackages, buttonEvents, packages } from "./packages.js"
+import { buttonEvents, packagesForm } from "./packages.js"
 import { createProjectBoxOne, createProjectBoxTwo, projArray, clickEvents } from "./projects.js";
 
 const init = () => {
@@ -8,7 +8,7 @@ const init = () => {
   createProfile();
   createFooter();
   if (window.location.pathname.includes("packages")) {
-    createPackages();
+    packagesForm();
     buttonEvents();
   }
   if (window.location.pathname.includes("projects")) {
