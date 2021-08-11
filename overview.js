@@ -1,11 +1,5 @@
 import { renderToDom } from "./renderToDom.js";
 
-// {/* <div id="navbar"></div>
-// <div id="profile"></div>
-// <div id="pinnedProject" class="aBlock"></div>
-// <div id="newProject" class="bBlock"></div>
-// <div id="footer"></div> */}
-
 const projectArray = [
     {
         projectName: "Project 1",
@@ -39,7 +33,8 @@ const projectCards = (prjCard) => {
 
 const projectForm = () => {
     let domString = `
-        <form id="subProjectForm">Create a new Project</form>
+        <form id="subProjectForm">
+        <div class="mb-3">Create a new Project</div>
             <p id="formSubText">Coordinate, track, and update your work in one place, so projects stay transparent and on schedule.</p>
             <hr>
         <div class="mb-3">
@@ -59,13 +54,15 @@ const projectForm = () => {
     renderToDom("#newProject", domString);
 };
 
-const handleFormSubmit = (event) => {
+const ovwHandleFormSubmit = (event) => {
     event.preventDefault();
-    const newProject = {
+    const ovwNewProject = {
         name: document.querySelector("#nameInput").value,
         description: document.querySelector("#descriptionInput").value,
     };
-    projectArray.push(newProject);
+    
+    projectArray.push(ovwNewProject);
+    console.log(projectArray);
     projectCards(projectArray);
     document.querySelector("form").reset();
 };
@@ -73,8 +70,8 @@ const handleFormSubmit = (event) => {
   const overviewClickEvents = () => {
     document
       .querySelector("#subProjectForm")
-      .addEventListener("submit", handleFormSubmit);
+      .addEventListener("submit", ovwHandleFormSubmit);
 };
 
 
-export {projectCards, projectForm, projectArray, overviewClickEvents };
+export { projectCards, projectForm, projectArray, overviewClickEvents };
