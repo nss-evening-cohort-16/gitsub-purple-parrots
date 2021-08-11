@@ -16,9 +16,9 @@ const projectArray = [
 
 ];
 
-const projectCards = (prjCard) => {
+const projectCards = (array) => {
     let domString = "";
-    prjCard.forEach((project) => {
+    array.forEach((project) => {
         domString += `
             <div class="container"></div>
                 <div class="card-body">
@@ -57,20 +57,18 @@ const projectForm = () => {
 const ovwHandleFormSubmit = (event) => {
     event.preventDefault();
     const ovwNewProject = {
-        name: document.querySelector("#nameInput").value,
-        description: document.querySelector("#descriptionInput").value,
+        projectName: document.querySelector("#nameInput").value,
+        projectDescription: document.querySelector("#descriptionInput").value,
     };
     
     projectArray.push(ovwNewProject);
-    console.log(projectArray);
     projectCards(projectArray);
-    document.querySelector("form").reset();
 };
   
   const overviewClickEvents = () => {
     document
       .querySelector("#subProjectForm")
-      .addEventListener("submit", ovwHandleFormSubmit);
+      .addEventListener("submit", ovwHandleFormSubmit)
 };
 
 
