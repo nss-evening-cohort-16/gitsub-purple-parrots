@@ -1,4 +1,5 @@
 import { createNavBar, createProfile, createFooter } from "./sharedLayout.js";
+import { buttonEvents, packagesForm } from "./packages.js"
 import { createProjectBoxOne, createProjectBoxTwo, projArray, clickEvents } from "./projects.js";
 import { projectForm, projectCards, projectArray, overviewClickEvents } from "./overview.js";
 
@@ -15,6 +16,13 @@ const init = () => {
     createProjectBoxTwo();
     clickEvents();
   }
+
+  else if (window.location.pathname.includes("index")) {
+    packagesForm(); 
+    buttonEvents();
+    
+  }
+
   else if (window.location.pathname.includes("index")) {
     projectForm(); 
     projectCards(projectArray);
