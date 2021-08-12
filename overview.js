@@ -1,5 +1,22 @@
 import { renderToDom } from "./renderToDom.js";
 
+
+const renderAboutMe = () => {
+    let domString = `
+<div class="card" style="width: 18rem;">
+
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>`
+
+renderToDom("#aboutMe", domString);
+
+}
+
 const projectArray = [
     {
         projectName: "Project 1",
@@ -18,18 +35,34 @@ const projectArray = [
 
 const projectCards = (array) => {
     let domString = "";
-    array.forEach((project) => {
+    array.forEach((project, i) => {
         domString += `
-            <div class="container"></div>
+            <div class="container" style="width: 18rem></div>
                 <div class="card-body">
                     <h5 class="card-title">${project.projectName}</h5>
                     <p class="card-text">${project.projectDescription}</p>
+                    <button type="button" id=delete--${i} class="btn btn-danger btn-delete">Delete</button></button>
                 </div>
             </div>`
-
     });
     renderToDom("#pinnedProject", domString);
+    document.querySelector("#pinnedProject").addEventListener("click", deleteProject);
 };
+
+const deleteProject = (event) => {
+    const targetType = event.target.type;
+    const targetId = event.target.id;
+
+    if (targetType === "button"){
+        const [method,id] = targetId.split("--");
+
+        if (method === "delete"){
+        projectArray.splice(id,1);
+        projectCards(projectArray);
+        };
+    };
+};
+
 
 const projectForm = () => {
     let domString = `
@@ -51,7 +84,7 @@ const projectForm = () => {
       </form>`
 
     
-    renderToDom("#newProject", domString);
+    renderToDom("#pinnedProject", domString);
 };
 
 const ovwHandleFormSubmit = (event) => {
@@ -63,13 +96,14 @@ const ovwHandleFormSubmit = (event) => {
     
     projectArray.push(ovwNewProject);
     projectCards(projectArray);
+    document.querySelector("form").reset();
 };
   
   const overviewClickEvents = () => {
     document
       .querySelector("#subProjectForm")
-      .addEventListener("submit", ovwHandleFormSubmit)
+      .addEventListener("submit", ovwHandleFormSubmit);  
 };
 
 
-export { projectCards, projectForm, projectArray, overviewClickEvents };
+export { projectCards, projectForm, projectArray, overviewClickEvents, renderAboutMe };
