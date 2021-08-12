@@ -1,5 +1,6 @@
 import { renderToDom } from "./renderToDom.js";
 import { createNavBar, createProfile, createFooter } from "./sharedLayout.js";
+export const searchBar = document.getElementById('searchBar');
 
 //array of projects
 const projArray = [
@@ -22,21 +23,22 @@ const projArray = [
   {
     name: "test1",
     description: "repo practice",
-  }
+  },
 ];
 
 //creates card that will display all projects
 const createProjectBoxOne = (array) => {
-    let domString = "";
-    array.forEach((project) => {
-      domString += `
-        <div class="container">
+  let domString = "";
+  array.forEach((project) => {
+    domString += `
+        <div class="projListContainer">
           <h5 class="card-title">${project.name}</h5>
           <p class="card-text">${project.description}</p>
         </div>
       `;
-    });
+  });
   renderToDom("#block1", domString);
+  createSortButton();
 };
 
 //creates card with form to create a new project
@@ -67,18 +69,53 @@ const createProjectBoxTwo = () => {
 const handleFormSubmit = (event) => {
   event.preventDefault();
   const newProject = {
-      name: document.querySelector("#nameInput").value,
-      description: document.querySelector("#descInput").value,
-    };
+    name: document.querySelector("#nameInput").value,
+    description: document.querySelector("#descInput").value,
+  };
   projArray.push(newProject);
   createProjectBoxOne(projArray);
+  document.querySelector("form").reset();
 };
+
+//function that creates the sort button
+const createSortButton = () => {
+  let domString = `
+    <button id="sortBtn" class="btn" type="click">Sort A-Z</button>
+  `;
+  renderToDom("#block3", domString);
+};
+
+//function that sorts the projects alphabetically
+const sortProjectsAZ = () => {
+  createProjectBoxOne(
+    projArray.sort((a, b) => (a.name === b.name ? 0 : a.name > b.name ? 1 : -1))
+  );
+};
+
+//function for searchbar
+searchBar.addEventListener("keyup", (event) => {
+  const searchString = event.target.value.toLowerCase();
+  const filterProjects = projArray.filter((project) => {
+    return (
+      project.name.toLowerCase().includes(searchString) ||
+      project.description.toLowerCase().includes(searchString)
+    );
+  });
+  createProjectBoxOne(filterProjects);
+});
 
 //function for click events
 const clickEvents = () => {
   document
     .querySelector("#createProj")
     .addEventListener("submit", handleFormSubmit);
+  document.querySelector("#block3").addEventListener("click", sortProjectsAZ);
+  // document.querySelector("#block4").addEventListener("keyup", searchInclude);
 };
 
-export { createProjectBoxOne, projArray, createProjectBoxTwo, clickEvents };
+export {
+  createProjectBoxOne,
+  projArray,
+  createProjectBoxTwo,
+  clickEvents,
+};
