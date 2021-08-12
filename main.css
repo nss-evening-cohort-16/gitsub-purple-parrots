@@ -5,3 +5,26 @@
 .block2{
     background-color: bisque;
 }
+
+.form-check-input {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+}
+.form-check-input:before {
+    content: "\2606";
+    position: center;
+    visibility:visible;
+}
+.form-check-input:checked:before {
+    content: "\2605";
+    position: center;
+    visibility:visible;
+}
+/* .form-check-input div {
+    border: 1px #ccc solid;
+    padding:20px;
+    flex: 1 0 calc(33.333% - 20px);
+    margin-bottom: 20px;
+    
+} */
