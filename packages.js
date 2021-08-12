@@ -1,22 +1,31 @@
 import { renderToDom } from "./renderToDom.js";
 
-
 export const packages = []; 
 
 const renderPackages = (array) => {
     let domString="";
-    array.forEach((packet) =>{
+    array.forEach((packet, i) =>{
         domString +=  `
-        <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">${packet.name}</h5>
-          <p class="card-text">${packet.description}</p>
+        <div id="packet-card" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${packet.name}</h5>
+                <p class="card-text">${packet.description}</p>
+            </div>
+            <button type="button" id="${i}" class="btn btn-primary">Delete</button>
         </div>
-      </div>
     `
     });
     renderToDom("#block2", domString);
     
+}
+
+const deletePackage = (event) => {
+    const deleteBtnId = event.target.id;
+    const targetType = event.target.type;
+   if (targetType === "button") {
+       packages.splice(deleteBtnId, 1);
+       renderPackages(packages);
+   }
 }
 
 const packagesForm = () => {
@@ -34,8 +43,21 @@ const packagesForm = () => {
     </form>
     `
     renderToDom("#block1", domString);
-    
 }
+
+export const searchBar = document.getElementById('searchBar')
+
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = event.target.value.toLowerCase();
+
+    const filteredPackages = packages.filter((packet) => {
+        return(
+            packet.name.toLowerCase().includes(searchString) || packet.description.toLowerCase().includes(searchString)
+        );
+
+    });
+    renderPackages(filteredPackages)
+});
 
 const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -55,6 +77,7 @@ const handleFormSubmit = (event) => {
 
 const buttonEvents = () => {
     document.querySelector("#packForm").addEventListener("submit", handleFormSubmit);
+    document.querySelector("#block2").addEventListener("click", deletePackage);
 }
 
 export { buttonEvents, packagesForm, handleFormSubmit }
