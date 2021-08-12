@@ -1,6 +1,6 @@
 import { createNavBar, createProfile, createFooter } from "./sharedLayout.js";
 import { createRepoForm, createRepoContainer, repoArray, repoClickEvents } from "./repositories.js";
-import { buttonEvents, packagesForm } from "./packages.js"
+import { buttonEvents, searchBar, packagesForm } from "./packages.js"
 import { createProjectBoxOne, createProjectBoxTwo, projArray, clickEvents } from "./projects.js";
 import { projectForm, projectCards, projectArray, overviewClickEvents, renderAboutMe } from "./overview.js";
 
