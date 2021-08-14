@@ -32,7 +32,7 @@ const createNavBar = () => {
 //function to render profile area
 const createProfile = () => {
   let domString = `
-  <div class="card" style="width: 18rem;">
+  <div class="card">
   <img src="https://ummokblog.files.wordpress.com/2017/06/mb1.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Comicus, The Standup Philosopher (C0micus_HotWpt1)</h5>

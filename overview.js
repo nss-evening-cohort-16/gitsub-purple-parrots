@@ -2,10 +2,12 @@ import { renderToDom } from "./renderToDom.js";
 
 const renderAboutMe = () => {
     let domString = `
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+        <div class="card">
+            <h5 class="card-title">Hi, I'm Comicus! The standup philospher!</h5>
+            <hr>
+            <img src="https://padresteve.files.wordpress.com/2011/10/history-of-the-world-part-i-brooks.jpg" class="card-img-top" alt="Comicus the Standup Philosohper">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
         </div>`;
@@ -33,7 +35,7 @@ const projectCards = (array) => {
     let domString = "";
     array.forEach((project, i) => {
         domString += `
-            <div class="container" style="width: 18rem></div>
+            <div class="container" class="pinnedProjectCard"></div>
                 <div class="card-body">
                     <h5 class="card-title">${project.projectName}</h5>
                     <p class="card-text">${project.projectDescription}</p>

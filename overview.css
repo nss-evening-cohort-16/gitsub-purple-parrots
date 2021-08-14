@@ -1,17 +1,38 @@
-/* .contentContainer{
-    flex-direction: column;
-}  */
+body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.navFlex,
+.navFoot{
+    min-width: 100%;
+}
+
+.card{
+    max-width: 25%;
+}
+.blockContainer{
+    max-width: 75%;
+}
+
 .block1{
-    background-color: aqua;
-    
+    flex-grow: 1;
+    background-color: aqua;   
 }
 
 .block2{
     background-color: bisque;
-    /* display: flex;
-    flex-wrap: wrap; */
+    display: flex;
+    flex-wrap: wrap;
 
 }
 .block3{
     background-color: burlywood;
+}
+.pinnedProjectCard{
+    border-color: black;
+    border-style: solid;
+    max-width: 25px;
+    background-color: black;
 }
