@@ -3,6 +3,7 @@ import { createRepoForm, createRepoContainer, repoArray, repoClickEvents } from 
 import { createProjectBoxOne, createProjectBoxTwo, projArray, clickEvents } from "./projects.js";
 import { buttonEvents, packagesForm } from "./packages.js"
 import { renderAboutMe, projectForm, projectCards, projectArray, overviewClickEvents } from "./overview.js";
+import { userProfileData } from "./userProfileData.js";
 
 
 
@@ -12,7 +13,7 @@ import { renderAboutMe, projectForm, projectCards, projectArray, overviewClickEv
 const init = () => {
   console.log(window.location.pathname);
   createNavBar();
-  createProfile();
+  createProfile(userProfileData);
   createFooter();
   
   if (window.location.pathname.includes("repositories")) {
