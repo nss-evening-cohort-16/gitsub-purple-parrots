@@ -45,20 +45,6 @@ const packagesForm = () => {
   renderToDom("#block1", domString);
 };
 
-// export const searchBar = document.getElementById("#searchBar")
-
-// searchBar.addEventListener("keyup", (event) => {
-//     const searchString = event.target.value.toLowerCase();
-
-//     const filteredPackages = packages.filter((packet) => {
-//         return(
-//             packet.name.toLowerCase().includes(searchString) || packet.description.toLowerCase().includes(searchString)
-//         );
-
-//     });
-//     renderPackages(filteredPackages)
-// });
-
 const searchBarBuilder = () => {
     let domString = `
     <input type="text" id="searchBar" placeholder="Search packages">
