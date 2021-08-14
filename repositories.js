@@ -42,17 +42,32 @@ const createRepoContainer = (array) => {
 renderToDom("#container1" ,domString);
 };
 
-export const repoSearchBar = document.getElementById('repoSearchBar')
+/* export const repoSearchBar = document.getElementById('repoSearchBar')
 
 repoSearchBar.addEventListener('keyup', (event) => {
-const searchString = event.target.value.toLowerCase();
+const searchRepoString = event.target.value.toLowerCase();
 const filterRepos = repoArray.filter((repo) => {
   return(
-    repo.name.toLowerCase().includes(searchString) || repo.description.toLowerCase().includes(searchString)
+    repo.name.toLowerCase().includes(searchRepoString) || repo.description.toLowerCase().includes(searchRepoString)
   );
 });
 createRepoContainer(filterRepos)
-});
+}); */
+
+const RepoSearchBar = () => {
+  let domString = `
+  <input type="text" id="searchBar" placeholder="package name">
+  `;
+  renderToDom("#searchBarBlock", domString);
+};
+
+const repoSearchFunction = (event) => {
+  const searchString = event.target.value.toLowerCase();
+  const filterRepos = packages.filter((repo) => {
+      return repo.name.toLowerCase().includes(searchString);
+  });
+  createRepoContainer(filterRepos);
+};
 
 const createRepoForm = () => {
     let domString = `
@@ -86,8 +101,10 @@ const repoClickEvents = () => {
   document
   .querySelector("#createRepo")
   .addEventListener("submit", handleFormSubmit)
+
+  document.querySelector("#searchBarBlock").addEventListener("keyup", repoSearchFunction);
 }
 
 
 
-export { createRepoForm, createRepoContainer, repoClickEvents }
+export { createRepoForm, createRepoContainer, repoClickEvents, RepoSearchBar, /* repoSearchFunction */ }
