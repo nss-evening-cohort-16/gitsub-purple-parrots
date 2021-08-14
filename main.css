@@ -1,30 +1,27 @@
-.block1{
-    background-color: aqua;
+body {
+    background-color: #0d1114;
+    color: #c9d1d9;
 }
 
-.block2{
-    background-color: bisque;
+.card {
+    background-color: #0d1114;
+    color: #c9d1d9; 
 }
+
+
 
 .form-check-input {
     visibility:hidden;
     font-size:30px;
     cursor:pointer;
-}
+};
 .form-check-input:before {
     content: "\2606";
     position: center;
     visibility:visible;
-}
+};
 .form-check-input:checked:before {
     content: "\2605";
     position: center;
     visibility:visible;
-}
-/* .form-check-input div {
-    border: 1px #ccc solid;
-    padding:20px;
-    flex: 1 0 calc(33.333% - 20px);
-    margin-bottom: 20px;
-    
-} */
+};
