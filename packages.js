@@ -84,4 +84,5 @@ const buttonEvents = () => {
   document.querySelector("#block3").addEventListener("keyup", searchBarFunction);
 };
 
-export { buttonEvents, packagesForm, handleFormSubmit };
+export { buttonEvents, packagesForm };
+  

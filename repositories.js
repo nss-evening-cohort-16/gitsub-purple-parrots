@@ -24,17 +24,38 @@ export const repoArray = [
 },
 ];
 
+
 const createRepoContainer = (array) => {
   let domString = "";
   array.forEach((repo) => {
-  domString += `
+    domString += `
   <div class="container">
-          <h5 class="card-title">${repo.name}</h5>
+        <h5 class="card-title">${repo.name}</h5>
           <p class="card-text">${repo.description}</p>
-        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+          <label class="form-check-label" for="inlineCheckbox1"></label>
+        </div>    
+  </div>
   `
-  })
-  renderToDom("#container1" ,domString);
+})
+renderToDom("#container1" ,domString);
+RepoSearchBar();
+};
+
+const RepoSearchBar = () => {
+  let domString = `
+  <input type="text" id="searchBar" placeholder="repo name">
+  `;
+  renderToDom("#searchBarBlock", domString);
+};
+
+const repoSearchFunction = (event) => {
+  const searchRepoString = event.target.value.toLowerCase();
+  const filterRepos = repoArray.filter((repo) => {
+      return repo.name.toLowerCase().includes(searchRepoString);
+  });
+  createRepoContainer(filterRepos);
 };
 
 const createRepoForm = () => {
@@ -69,6 +90,8 @@ const repoClickEvents = () => {
   document
   .querySelector("#createRepo")
   .addEventListener("submit", handleFormSubmit)
+
+  document.querySelector("#searchBarBlock").addEventListener("keyup", repoSearchFunction);
 }
 
 
