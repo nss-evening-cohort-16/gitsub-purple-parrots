@@ -40,31 +40,20 @@ const createRepoContainer = (array) => {
   `
 })
 renderToDom("#container1" ,domString);
+RepoSearchBar();
 };
-
-/* export const repoSearchBar = document.getElementById('repoSearchBar')
-
-repoSearchBar.addEventListener('keyup', (event) => {
-const searchRepoString = event.target.value.toLowerCase();
-const filterRepos = repoArray.filter((repo) => {
-  return(
-    repo.name.toLowerCase().includes(searchRepoString) || repo.description.toLowerCase().includes(searchRepoString)
-  );
-});
-createRepoContainer(filterRepos)
-}); */
 
 const RepoSearchBar = () => {
   let domString = `
-  <input type="text" id="searchBar" placeholder="package name">
+  <input type="text" id="searchBar" placeholder="repo name">
   `;
   renderToDom("#searchBarBlock", domString);
 };
 
 const repoSearchFunction = (event) => {
-  const searchString = event.target.value.toLowerCase();
-  const filterRepos = packages.filter((repo) => {
-      return repo.name.toLowerCase().includes(searchString);
+  const searchRepoString = event.target.value.toLowerCase();
+  const filterRepos = repoArray.filter((repo) => {
+      return repo.name.toLowerCase().includes(searchRepoString);
   });
   createRepoContainer(filterRepos);
 };
@@ -107,4 +96,4 @@ const repoClickEvents = () => {
 
 
 
-export { createRepoForm, createRepoContainer, repoClickEvents, RepoSearchBar, /* repoSearchFunction */ }
+export { createRepoForm, createRepoContainer, repoClickEvents }

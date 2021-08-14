@@ -2,3 +2,11 @@
   display: flex;
   flex-direction: column;
 }
+
+.btn {
+  border: 1px solid black;
+}
+
+#block1 {
+  border: 1px solid black;
+}
