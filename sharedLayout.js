@@ -3,7 +3,7 @@ import { renderToDom } from "./renderToDom.js";
 //function to render the nav bar
 const createNavBar = () => {
   let domString = `
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light>
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">Overview</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
