@@ -1,9 +1,8 @@
 import { createNavBar, createProfile, createFooter } from "./sharedLayout.js";
 import { createRepoForm, createRepoContainer, repoArray, repoClickEvents } from "./repositories.js";
-import { buttonEvents, searchBar, packagesForm } from "./packages.js"
 import { createProjectBoxOne, createProjectBoxTwo, projArray, clickEvents } from "./projects.js";
-import { projectForm, projectCards, projectArray, renderAboutMe, overviewClickEvents } from "./overview.js";
-
+import { buttonEvents, packagesForm } from "./packages.js"
+import { projectForm, projectCards, projectArray, overviewClickEvents } from "./overview.js";
 
 const init = () => {
   console.log(window.location.pathname);
@@ -19,7 +18,6 @@ const init = () => {
   if (window.location.pathname.includes("packages")) {
     packagesForm();
     buttonEvents();
-    searchBar();
   }
   if (window.location.pathname.includes("projects")) {
     createProjectBoxOne(projArray);
@@ -27,10 +25,10 @@ const init = () => {
     clickEvents();
   }
   if (window.location.pathname.includes("index")) {
-    renderAboutMe();
-    projectCards(projectArray);
     projectForm(); 
+    projectCards(projectArray);
     overviewClickEvents();
+    renderAboutMe();
   }
 
   
