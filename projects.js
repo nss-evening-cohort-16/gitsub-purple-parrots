@@ -1,6 +1,5 @@
 import { renderToDom } from "./renderToDom.js";
 import { createNavBar, createProfile, createFooter } from "./sharedLayout.js";
-export const searchBar = document.getElementById('searchBar');
 
 //array of projects
 const projArray = [
@@ -39,6 +38,7 @@ const createProjectBoxOne = (array) => {
   });
   renderToDom("#block1", domString);
   createSortButton();
+  createSearchBar();
 };
 
 //creates card with form to create a new project
@@ -92,17 +92,22 @@ const sortProjectsAZ = () => {
   );
 };
 
-//function for searchbar
-searchBar.addEventListener("keyup", (event) => {
+//function creating searchbar
+const createSearchBar = () => {
+  let domString = `
+  <input type="text" id="searchBarProj" placeholder="Search projects">
+  `;
+  renderToDom("#block4", domString);
+};
+
+//function to search through projects
+const searchFunction = (event) => {
   const searchString = event.target.value.toLowerCase();
   const filterProjects = projArray.filter((project) => {
-    return (
-      project.name.toLowerCase().includes(searchString) ||
-      project.description.toLowerCase().includes(searchString)
-    );
+    return project.name.toLowerCase().includes(searchString);
   });
   createProjectBoxOne(filterProjects);
-});
+};
 
 //function for click events
 const clickEvents = () => {
@@ -110,12 +115,7 @@ const clickEvents = () => {
     .querySelector("#createProj")
     .addEventListener("submit", handleFormSubmit);
   document.querySelector("#block3").addEventListener("click", sortProjectsAZ);
-  // document.querySelector("#block4").addEventListener("keyup", searchInclude);
+  document.querySelector("#block4").addEventListener("keyup", searchFunction);
 };
 
-export {
-  createProjectBoxOne,
-  projArray,
-  createProjectBoxTwo,
-  clickEvents,
-};
+export { createProjectBoxOne, projArray, createProjectBoxTwo, clickEvents };
