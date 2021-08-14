@@ -44,20 +44,48 @@ const packagesForm = () => {
     `
     renderToDom("#block1", domString);
 }
+export const searchBar = 1;
 
-export const searchBar = document.getElementById('searchBar')
+// export const searchBar = document.getElementById('searchBar');
 
-searchBar.addEventListener('keyup', (e) => {
-    const searchString = event.target.value.toLowerCase();
+// searchBar.addEventListener('kepyup', (event) => {
+//     event.preventDefault();
+//     const searchString = event.target.value.toLowerCase();
 
-    const filteredPackages = packages.filter((packet) => {
-        return(
-            packet.name.toLowerCase().includes(searchString) || packet.description.toLowerCase().includes(searchString)
-        );
+//     const filteredPackages = packages.filter((packet) => {
+//         return(
+//             packet.name.toLowerCase().includes(searchString) || packet.description.toLowerCase().includes(searchString)
+//         );
 
-    });
-    renderPackages(filteredPackages)
-});
+//     });
+//     renderPackages(filteredPackages)
+// });
+
+
+// export const searchBar = (event) => {
+//     event.preventDefault();
+//     if (document.getElementById('searchBar'){
+
+
+//     })
+// };
+
+
+
+// searchBar.addEventListener('kepyup', (event) => {
+    
+//     const searchString = event.target.value.toLowerCase();
+
+//     const filteredPackages = packages.filter((packet) => {
+//         return(
+//             packet.name.toLowerCase().includes(searchString) || packet.description.toLowerCase().includes(searchString)
+//         );
+
+//     });
+//     renderPackages(filteredPackages)
+// });
+
+
 
 const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -80,4 +108,4 @@ const buttonEvents = () => {
     document.querySelector("#block2").addEventListener("click", deletePackage);
 }
 
-export { buttonEvents, packagesForm, handleFormSubmit }
+export { buttonEvents, packagesForm, handleFormSubmit, }

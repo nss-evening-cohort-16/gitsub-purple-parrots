@@ -1,20 +1,16 @@
 import { renderToDom } from "./renderToDom.js";
 
-
 const renderAboutMe = () => {
     let domString = `
-<div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>`;
 
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>`
-
-renderToDom("#aboutMe", domString);
-
+    renderToDom("#aboutMe", domString);
 }
 
 const projectArray = [
@@ -43,13 +39,14 @@ const projectCards = (array) => {
                     <p class="card-text">${project.projectDescription}</p>
                     <button type="button" id=delete--${i} class="btn btn-danger btn-delete">Delete</button></button>
                 </div>
-            </div>`
+            </div>`;
     });
     renderToDom("#pinnedProject", domString);
     document.querySelector("#pinnedProject").addEventListener("click", deleteProject);
 };
 
 const deleteProject = (event) => {
+    
     const targetType = event.target.type;
     const targetId = event.target.id;
 
@@ -81,10 +78,11 @@ const projectForm = () => {
         <hr>
         <form id="projectBtn">
         <button type="submit" class="btn btn-primary">Submit</button>
-      </form>`
+      </form>`;
 
     
-    renderToDom("#pinnedProject", domString);
+    renderToDom("#newProjectForm", domString);
+
 };
 
 const ovwHandleFormSubmit = (event) => {
@@ -93,17 +91,16 @@ const ovwHandleFormSubmit = (event) => {
         projectName: document.querySelector("#nameInput").value,
         projectDescription: document.querySelector("#descriptionInput").value,
     };
-    
     projectArray.push(ovwNewProject);
     projectCards(projectArray);
     document.querySelector("form").reset();
 };
   
   const overviewClickEvents = () => {
-    document
-      .querySelector("#subProjectForm")
-      .addEventListener("submit", ovwHandleFormSubmit);  
+    document.querySelector("#subProjectForm").addEventListener("submit", ovwHandleFormSubmit);  
+
 };
 
 
-export { projectCards, projectForm, projectArray, overviewClickEvents, renderAboutMe };
+export { projectCards, projectForm, projectArray, renderAboutMe, overviewClickEvents };
+
