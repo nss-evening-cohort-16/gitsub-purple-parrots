@@ -46,7 +46,6 @@ const projectCards = (array) => {
 };
 
 const deleteProject = (event) => {
-    
     const targetType = event.target.type;
     const targetId = event.target.id;
 
@@ -59,7 +58,6 @@ const deleteProject = (event) => {
         };
     };
 };
-
 
 const projectForm = () => {
     let domString = `
@@ -102,5 +100,5 @@ const ovwHandleFormSubmit = (event) => {
 };
 
 
-export { projectCards, projectForm, projectArray, renderAboutMe, overviewClickEvents };
+export { renderAboutMe, projectCards, projectForm, projectArray,  overviewClickEvents };
 

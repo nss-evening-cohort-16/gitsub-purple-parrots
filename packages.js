@@ -41,53 +41,6 @@ const packagesForm = () => {
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-<<<<<<< HEAD
-    `
-    renderToDom("#block1", domString);
-}
-export const searchBar = 1;
-
-// export const searchBar = document.getElementById('searchBar');
-
-// searchBar.addEventListener('kepyup', (event) => {
-//     event.preventDefault();
-//     const searchString = event.target.value.toLowerCase();
-
-//     const filteredPackages = packages.filter((packet) => {
-//         return(
-//             packet.name.toLowerCase().includes(searchString) || packet.description.toLowerCase().includes(searchString)
-//         );
-
-//     });
-//     renderPackages(filteredPackages)
-// });
-
-
-// export const searchBar = (event) => {
-//     event.preventDefault();
-//     if (document.getElementById('searchBar'){
-
-
-//     })
-// };
-
-
-
-// searchBar.addEventListener('kepyup', (event) => {
-    
-//     const searchString = event.target.value.toLowerCase();
-
-//     const filteredPackages = packages.filter((packet) => {
-//         return(
-//             packet.name.toLowerCase().includes(searchString) || packet.description.toLowerCase().includes(searchString)
-//         );
-
-//     });
-//     renderPackages(filteredPackages)
-// });
-
-
-=======
     `;
   renderToDom("#block1", domString);
 };
@@ -120,7 +73,6 @@ const searchBarFunction = (event) => {
     });
     renderPackages(filteredPackages);
   };
->>>>>>> main
 
 
 
@@ -146,8 +98,4 @@ const buttonEvents = () => {
   document.querySelector("#block3").addEventListener("keyup", searchBarFunction);
 };
 
-<<<<<<< HEAD
-export { buttonEvents, packagesForm, handleFormSubmit, }
-=======
 export { buttonEvents, packagesForm, handleFormSubmit };
->>>>>>> main

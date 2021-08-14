@@ -2,7 +2,12 @@ import { createNavBar, createProfile, createFooter } from "./sharedLayout.js";
 import { createRepoForm, createRepoContainer, repoArray, repoClickEvents } from "./repositories.js";
 import { createProjectBoxOne, createProjectBoxTwo, projArray, clickEvents } from "./projects.js";
 import { buttonEvents, packagesForm } from "./packages.js"
-import { projectForm, projectCards, projectArray, overviewClickEvents } from "./overview.js";
+import { renderAboutMe, projectForm, projectCards, projectArray, overviewClickEvents } from "./overview.js";
+
+
+
+
+
 
 const init = () => {
   console.log(window.location.pathname);
@@ -25,12 +30,13 @@ const init = () => {
     clickEvents();
   }
   if (window.location.pathname.includes("index")) {
+    renderAboutMe();
     projectForm(); 
     projectCards(projectArray);
     overviewClickEvents();
-    renderAboutMe();
+    
   }
-
+ 
   
 };
 
