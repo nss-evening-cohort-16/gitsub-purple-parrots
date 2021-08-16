@@ -30,7 +30,7 @@ const createProjectBoxOne = (array) => {
   let domString = "";
   array.forEach((project) => {
     domString += `
-        <div class="projListContainer">
+        <div class="card projListContainer cardStyle" style="width: 18rem">
           <h5 class="card-title">${project.name}</h5>
           <p class="card-text">${project.description}</p>
         </div>
