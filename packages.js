@@ -6,7 +6,7 @@ const renderPackages = (array) => {
   let domString = "";
   array.forEach((packet, i) => {
     domString += `
-        <div id="packet-card" class="card" style="width: 18rem;">
+        <div id="packet-card" class="card cardStyle" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">${packet.name}</h5>
                 <p class="card-text">${packet.description}</p>

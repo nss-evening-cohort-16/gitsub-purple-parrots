@@ -29,7 +29,7 @@ const createRepoContainer = (array) => {
   let domString = "";
   array.forEach((repo) => {
     domString += `
-  <div class="container">
+  <div class="card container cardStyle" style="width: 18rem">
         <h5 class="card-title">${repo.name}</h5>
           <p class="card-text">${repo.description}</p>
         <div class="form-check form-check-inline">
