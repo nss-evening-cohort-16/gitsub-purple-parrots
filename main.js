@@ -5,11 +5,6 @@ import { buttonEvents, packagesForm } from "./packages.js"
 import { renderAboutMe, projectForm, projectCards, projectArray, overviewClickEvents } from "./overview.js";
 import { userProfileData } from "./userProfileData.js";
 
-
-
-
-
-
 const init = () => {
   console.log(window.location.pathname);
   createNavBar();

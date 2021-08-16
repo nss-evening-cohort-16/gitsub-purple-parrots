@@ -35,7 +35,7 @@ const createProfile = (array) => {
   let domString = "";
   array.forEach((user) => {
     domString += `
-  <div class="card" style="width: 18rem;">
+  <div class="card">
   <img src="${user.img}" class="card-img-top" alt="${user.name}">
   <div class="card-body">
     <h5 class="card-title">${user.name}, ${user.title}</h5>
