@@ -57,7 +57,7 @@ body {
 }
 
 .form-check-input {
-    visibility:hidden;
+    visibility:visible;
     font-size:30px;
     cursor:pointer;
 };
