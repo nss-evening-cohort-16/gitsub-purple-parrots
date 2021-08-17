@@ -1,5 +1,4 @@
 # Purple Parrots Fake GitHub:
-
 This is a 4 page application that mimics the front end applications of GitHub. There is an overview, repositories, projects, and packages pages. On the latter three you can create new packets, delete, and search for said packets. Each page also includes the profile and relevant links for the user. The overview page includes the Projects array that shows the user what they have active.
 
 ## About the User:
