@@ -14,20 +14,20 @@ This is a 4 page application that mimics the front end applications of GitHub. T
 - The overview page shows the pinned projects and a deeper look at the individual with an About Me section.
 
 ## Video Walkthrough of Purple Parrots Fake GitHub: 
-()
+(https://www.loom.com/share/b3fecbf4c2d6457d9f414fab5cf489b8)
 
 ## Project Screenshots
 
-<img width="1148" alt="overview" src="C:\Users\Luke Allen\OneDrive\Desktop\fake git pics\overview.jpg">
+<img width="1148" alt="overview" src="overview.jpg">
 
-<img width="1148" alt="overview" src="C:\Users\Luke Allen\OneDrive\Desktop\fake git pics\packages.jpg">
+<img width="1148" alt="overview" src="packages.jpg">
 
-<img width="1148" alt="overview" src="C:\Users\Luke Allen\OneDrive\Desktop\fake git pics\projects.jpg">
+<img width="1148" alt="overview" src="projects.jpg">
 
-<img width="1148" alt="overview" src="C:\Users\Luke Allen\OneDrive\Desktop\fake git pics\repos.jpg">
+<img width="1148" alt="overview" src="projects.jpg">
 
 ## Relevant Links
-- [Check out the deployed site](https://app.netlify.com/sites/purple-parrots-github/deploys)
+- [Check out the deployed site](https://purple-parrots-github.netlify.app/index.html)
 - [Project Board](https://github.com/nss-evening-cohort-16/gitsub-purple-parrots/projects/1)
 
 ## Contributors
