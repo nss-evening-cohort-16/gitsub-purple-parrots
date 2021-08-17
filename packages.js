@@ -6,7 +6,7 @@ const renderPackages = (array) => {
   let domString = "";
   array.forEach((packet, i) => {
     domString += `
-        <div id="packet-card" class="card cardStyle" style="width: 18rem;">
+        <div id="packet-card" class="card cardStyle packetCardStyle" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">${packet.name}</h5>
                 <p class="card-text">${packet.description}</p>
@@ -30,12 +30,12 @@ const deletePackage = (event) => {
 
 const packagesForm = () => {
   let domString = `
-    <form id="packForm">
-        <div class="mb-3">
+    <form id="packForm" class="cardStyle">
+        <div class="mb-3 packFormTop">
             <label for="name" class="form-label">Package Name</label>
             <input required type="text" class="form-control" id="packName" placeholder="Something.js">
         </div>
-        <div class="mb-3">
+        <div class="mb-3 packFormBottom">
             <label for="description" class="form-label">Description</label>
             <textarea class="form-control" id="packDescription" rows="3"></textarea>
         </div>
@@ -59,8 +59,6 @@ const searchBarFunction = (event) => {
     });
     renderPackages(filteredPackages);
   };
-
-
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
