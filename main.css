@@ -1,73 +1,97 @@
 body {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #0d1114;
-    color: #c9d1d9;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #0d1114;
+  color: #c9d1d9;
 }
 .navbarFlex,
-.footerFlex{
-    min-width: 100%;
+.footerFlex {
+  min-width: 100%;
 }
 
+.navbarFlex {
+  margin-left: 5px;
+}
 
 .card {
-    background-color: #0d1114;
-    color: #c9d1d9; 
-    align-items: center;
+  background-color: #0d1114;
+  color: #c9d1d9;
+  align-items: center;
+  text-align: center;
 }
 
-.contentContainer{
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1200px;
-    flex-basis: 600px;
-    flex-grow: 1;
-    flex-shrink: 1;
+.contentContainer {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-width: 1200px;
+  flex-basis: 600px;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
-.imgDiv{
-    max-width: 500px;
+.imgDiv {
+  max-width: 500px;
 }
 
-
-
-.card1Flex{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
+.card,
+.container,
+.cardStyle div {
+  border: 1px cornsilk solid;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-.cardStyle{
-    margin: 10px;
+.card1Flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
 }
 
-.searchContainer{
-    margin: 10px;
+.cardStyle {
+  margin: 10px;
 }
 
-.profileFlex{
-    max-width: 20rem;
-    flex-grow: 0;
-    flex-shrink: 1;
-    margin-left: 10px;
-    margin-top: 10px;
+.searchContainer {
+  margin: 10px;
 }
 
-.form-check-input {
-    visibility:visible;
-    font-size:30px;
-    cursor:pointer;
-};
-.form-check-input:before {
-    content: "\2606";
-    position: center;
-    visibility:visible;
-};
-.form-check-input:checked:before {
-    content: "\2605";
-    position: center;
-    visibility:visible;
-};
+.profileFlex {
+  max-width: 20rem;
+  flex-grow: 0;
+  flex-shrink: 1;
+  margin-left: 10px;
+  margin-top: 10px;
+  align-items: left;
+}
+
+#footer {
+  padding-top: 150px;
+}
+
+.star {
+  visibility: hidden;
+  font-size: 30px;
+  cursor: pointer;
+  color: azure;
+  margin: 2px;
+}
+.star:before {
+  content: "\2606";
+  position: absolute;
+  visibility: visible;
+}
+.star:checked:before {
+  content: "\2605";
+  position: absolute;
+  color: blue;
+}
+
+.packetCardStyle {
+  background-color: darkred;
+  border-color: goldenrod;
+  text-decoration-color: cornsilk;
+  border-width: 10px;
+}

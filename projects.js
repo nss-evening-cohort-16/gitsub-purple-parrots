@@ -80,7 +80,7 @@ const handleFormSubmit = (event) => {
 //function that creates the sort button
 const createSortButton = () => {
   let domString = `
-    <button id="sortBtn" class="btn" type="click">Sort A-Z</button>
+    <button id="sortBtn" class="sortBtn" type="click">Sort A-Z</button>
   `;
   renderToDom("#block3", domString);
 };

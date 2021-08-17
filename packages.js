@@ -6,7 +6,7 @@ const renderPackages = (array) => {
   let domString = "";
   array.forEach((packet, i) => {
     domString += `
-        <div id="packet-card" class="card cardStyle" style="width: 18rem;">
+        <div id="packet-card" class="card cardStyle packetCardStyle" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">${packet.name}</h5>
                 <p class="card-text">${packet.description}</p>
@@ -45,36 +45,20 @@ const packagesForm = () => {
   renderToDom("#block1", domString);
 };
 
-// export const searchBar = document.getElementById("#searchBar")
-
-// searchBar.addEventListener("keyup", (event) => {
-//     const searchString = event.target.value.toLowerCase();
-
-//     const filteredPackages = packages.filter((packet) => {
-//         return(
-//             packet.name.toLowerCase().includes(searchString) || packet.description.toLowerCase().includes(searchString)
-//         );
-
-//     });
-//     renderPackages(filteredPackages)
-// });
-
 const searchBarBuilder = () => {
-    let domString = `
+  let domString = `
     <input type="text" id="searchBar" placeholder="Search packages">
     `;
-    renderToDom("#block3", domString);
-  };
-  
+  renderToDom("#block3", domString);
+};
+
 const searchBarFunction = (event) => {
-    const searchString = event.target.value.toLowerCase();
-    const filteredPackages = packages.filter((packet) => {
-      return packet.name.toLowerCase().includes(searchString);
-    });
-    renderPackages(filteredPackages);
-  };
-
-
+  const searchString = event.target.value.toLowerCase();
+  const filteredPackages = packages.filter((packet) => {
+    return packet.name.toLowerCase().includes(searchString);
+  });
+  renderPackages(filteredPackages);
+};
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
@@ -95,8 +79,9 @@ const buttonEvents = () => {
     .querySelector("#packForm")
     .addEventListener("submit", handleFormSubmit);
   document.querySelector("#block2").addEventListener("click", deletePackage);
-  document.querySelector("#block3").addEventListener("keyup", searchBarFunction);
+  document
+    .querySelector("#block3")
+    .addEventListener("keyup", searchBarFunction);
 };
 
 export { buttonEvents, packagesForm };
-  
