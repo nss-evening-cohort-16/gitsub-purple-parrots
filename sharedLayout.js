@@ -41,10 +41,8 @@ const createProfile = (array) => {
     <h5 class="card-title">${user.name}, ${user.title}</h5>
     <p class="card-text">${user.bio}</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">${user.location}</li>
-    <li class="list-group-item">${user.gitHubUserName}</li>
-  </ul>
+    <p>${user.location}</p>
+    <p>${user.gitHubUserName}</p>
   <div class="card-body">
     <p>${user.socialMedia[0]}</p>
     <p>${user.socialMedia[1]}</p>
@@ -63,21 +61,20 @@ const createFooter = () => {
   let domString = `
   <ul class="nav justify-content-center">
   <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
+    <a class="nav-link active" href="#">Github</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Terms</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Pricing</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Security</a>
   </li>
 </ul>
   `;
   renderToDom("#footer", domString);
 };
-
 
 export { createNavBar, createProfile, createFooter };
