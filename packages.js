@@ -46,19 +46,19 @@ const packagesForm = () => {
 };
 
 const searchBarBuilder = () => {
-    let domString = `
+  let domString = `
     <input type="text" id="searchBar" placeholder="Search packages">
     `;
-    renderToDom("#block3", domString);
-  };
-  
+  renderToDom("#block3", domString);
+};
+
 const searchBarFunction = (event) => {
-    const searchString = event.target.value.toLowerCase();
-    const filteredPackages = packages.filter((packet) => {
-      return packet.name.toLowerCase().includes(searchString);
-    });
-    renderPackages(filteredPackages);
-  };
+  const searchString = event.target.value.toLowerCase();
+  const filteredPackages = packages.filter((packet) => {
+    return packet.name.toLowerCase().includes(searchString);
+  });
+  renderPackages(filteredPackages);
+};
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
@@ -79,8 +79,9 @@ const buttonEvents = () => {
     .querySelector("#packForm")
     .addEventListener("submit", handleFormSubmit);
   document.querySelector("#block2").addEventListener("click", deletePackage);
-  document.querySelector("#block3").addEventListener("keyup", searchBarFunction);
+  document
+    .querySelector("#block3")
+    .addEventListener("keyup", searchBarFunction);
 };
 
 export { buttonEvents, packagesForm };
-  
