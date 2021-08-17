@@ -18,13 +18,13 @@ This is a 4 page application that mimics the front end applications of GitHub. T
 
 ## Project Screenshots
 
-<img width="1148" alt="overview" src="overview.jpg">
+![overview](https://user-images.githubusercontent.com/74151134/129652226-3061ddc3-c9ce-4343-983b-9723b30104ce.jpg)
 
-<img width="1148" alt="overview" src="packages.jpg">
+![packages](https://user-images.githubusercontent.com/74151134/129652316-d2c73850-a2df-4b0e-9505-e7f17ae72ed2.jpg)
 
-<img width="1148" alt="overview" src="projects.jpg">
+![projects](https://user-images.githubusercontent.com/74151134/129652349-84ecd0ca-55bc-439e-a843-957eabdbf66f.jpg)
 
-<img width="1148" alt="overview" src="projects.jpg">
+![repos](https://user-images.githubusercontent.com/74151134/129652394-ee9048b5-90a7-49a8-a2c0-8ddc0d10ce1d.jpg)
 
 ## Relevant Links
 - [Check out the deployed site](https://purple-parrots-github.netlify.app/index.html)
