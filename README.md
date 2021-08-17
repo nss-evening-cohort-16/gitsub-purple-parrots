@@ -16,13 +16,19 @@ This is a 4 page application that mimics the front end applications of GitHub. T
 ## Video Walkthrough of Purple Parrots Fake GitHub: 
 ()
 
-## Project Screenshots 
+## Project Screenshots
 
+<img width="1148" alt="overview" src="C:\Users\Luke Allen\OneDrive\Desktop\fake git pics\overview.jpg">
+
+<img width="1148" alt="overview" src="C:\Users\Luke Allen\OneDrive\Desktop\fake git pics\packages.jpg">
+
+<img width="1148" alt="overview" src="C:\Users\Luke Allen\OneDrive\Desktop\fake git pics\projects.jpg">
+
+<img width="1148" alt="overview" src="C:\Users\Luke Allen\OneDrive\Desktop\fake git pics\repos.jpg">
 
 ## Relevant Links
-- [Check out the deployed site]()
+- [Check out the deployed site](https://app.netlify.com/sites/purple-parrots-github/deploys)
 - [Project Board](https://github.com/nss-evening-cohort-16/gitsub-purple-parrots/projects/1)
-## Project Screenshots 
 
 ## Contributors
 - [Mary Beth Hunter](https://github.com/marybethhunter)
